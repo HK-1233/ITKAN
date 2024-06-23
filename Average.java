@@ -2,7 +2,7 @@
 // Use this editor to write, compile and run your Java code online
 import java.util.Scanner;
 
-class HelloWorld {
+class Average {
     
     public static void main(String[] args) {
         
