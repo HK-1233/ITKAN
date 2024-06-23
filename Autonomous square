@@ -1,0 +1,65 @@
+package org.firstinspires.ftc.teamcode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+
+@Auton
+
+public class HadiaK extends LinearOpMode {
+    DcMotor frontLeft;
+    DcMotor frontRight;
+    DcMotor backLeft;
+    DcMotor backRight;
+
+    
+
+public void runOpMode() {
+    frontLeft = hardwareMap.get (DcMotor.class,"frontLeft");
+    frontRight = hardwareMap.get (DcMotor.class,"frontRight");
+    backLeft= hardwareMap.get (DcMotor.class,"backLeft");
+    backRight= hardwareMap.get (DcMotor.class,"backRight");
+
+    
+
+    waitForStart();
+    frontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+    backLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+
+    
+
+    
+
+    while (opModeIsActive()) {
+//Moving forward
+            frontLeft.setPower (-0.5);
+            frontRight.setPower (-0.5);
+            backLeft.setPower (-0.5);
+            backRight.setPower (-0.5);
+            sleep(1000);
+
+//Moving right
+            frontLeft.setPower (-0.5);
+            frontRight.setPower (0.5);
+            backLeft.setPower (0.5);
+            backRight.setPower (-0.5);
+            sleep(1000);
+
+//Moving backward
+            frontLeft.setPower (0.5);
+            frontRight.setPower (0.5);
+            backLeft.setPower (0.5);
+            backRight.setPower (0.5);
+            sleep(1000);
+
+//Moving left
+            frontLeft.setPower (0.5);
+            frontRight.setPower (-0.5);
+            backLeft.setPower (-0.5);
+            backRight.setPower (0.5);
+            sleep(1000);
+
+public final void loop()
+
+
+        }
