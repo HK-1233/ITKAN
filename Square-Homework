@@ -19,6 +19,8 @@ public void runOpMode() {
     frontRight= hardwareMap.get (DcMotor.class,"fr");
     
     waitForStart();
+frontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+backLeft.setDirection(DcMotorSimple.Direction.REVERSE);+
 
     while (opModeIsActive()) {
     if(gamepad1.dpad_up){
