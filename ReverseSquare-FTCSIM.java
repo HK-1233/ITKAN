@@ -1,7 +1,7 @@
 
 
 
-public class ReverseSquare extends LinearOpMode {
+public class ReverseSquare-FTCSIM extends LinearOpMode {
     DcMotor motorLeft;
     DcMotor motorRight;
     DcMotor frontLeft;
