@@ -1,5 +1,5 @@
 
-public class Linear1 LinearOpMode {
+public class LinearFTCSIM LinearOpMode {
     DcMotor motorLeft;
     DcMotor motorRight;
     DcMotor frontLeft;
