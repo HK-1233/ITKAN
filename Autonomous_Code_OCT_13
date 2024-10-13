@@ -28,13 +28,17 @@ public class HadiaAuton extends LinearOpMode {
     public void runOpMode() {
         initAT();
         waitForStart();
-            YawPitchRollAngles robotOrientation;
-            robotOrientation = imu.getRobotYawPitchRollAngles();       
+            Orientation myRobotOrientation;
+            myRobotOrientation = imu.getRobotOrientation(
+                AxesReference.INTRINSIC,
+                AxesOrder.XYZ,
+                AngleUnit.DEGREES
+);       
        
         while (opModeIsActive()) {
-            double Yaw = robotOrientation.getYaw(AngleUnit.DEGREES);
-            double Pitch = robotOrientation.getPitch(AngleUnit.DEGREES);
-            double Roll = robotOrientation.getRoll(AngleUnit.DEGREES);
+            float x_axis = myRobotOrientation.firstAngle;
+            float y_axis = myRobotOrientation.secondAngle;
+            float z_axis = myRobotOrientation.thirdAngle;
             telemetry.addData("imu yaw: ", Yaw);
             telemetry.addData("imu pitch:", Pitch);
             telemetry.addData("imu roll:", Roll);
