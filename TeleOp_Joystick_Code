@@ -1,0 +1,37 @@
+package org.firstinspires.ftc.teamcode;
+
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.hardware.DcMotor;
+
+@TeleOp
+public class SimpleTeleOp extends OpMode {
+    DcMotor frontLeft;
+    DcMotor frontRight;
+    DcMotor backLeft;
+    DcMotor backRight;
+
+    @Override
+    public void init() {
+        backLeft = hardwareMap.dcMotor.get("back_left");
+        backRight = hardwareMap.dcMotor.get("back_right");
+        frontLeft = hardwareMap.dcMotor.get("front_left");
+        frontRight = hardwareMap.dcMotor.get("front_right");
+    }
+
+    @Override
+    public void loop() {
+        double drive = -gamepad1.left_stick_y; // Forward/Backward
+        double turn = gamepad1.right_stick_x; // Turning
+
+        double frontLeftPower = drive + turn;
+        double frontRightPower = drive - turn;
+        double backLeftPower = drive + turn;
+        double backRightPower = drive - turn;
+
+        frontLeft.setPower(frontLeftPower);
+        frontRight.setPower(frontRightPower);
+        backLeft.setPower(backLeftPower);
+        backRight.setPower(backRightPower);
+    }
+}
